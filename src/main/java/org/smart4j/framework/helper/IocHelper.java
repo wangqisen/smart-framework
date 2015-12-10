@@ -2,7 +2,7 @@ package org.smart4j.framework.helper;
 
 import org.smart4j.framework.annotation.Inject;
 import org.smart4j.framework.helper.BeanHelper;
-import org.smart4j.framework.util.MapUtil;
+import org.smart4j.framework.util.CollectionUtil;
 import org.smart4j.framework.util.ReflectionUtil;
 
 import java.lang.reflect.Field;
@@ -15,7 +15,7 @@ public final class IocHelper {
 
     static {
         Map<Class<?>,Object> BEAN_MAP= BeanHelper.getBeanMap();
-        if(MapUtil.isNotEmpty(BEAN_MAP)){
+        if(CollectionUtil.isNotEmpty(BEAN_MAP)){
             for(Map.Entry<Class<?>,Object> entry:BEAN_MAP.entrySet()){
                 Class<?> beanCls=entry.getKey();
                 Object beanInstance=entry.getValue();
